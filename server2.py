@@ -4,7 +4,7 @@ import sklearn
 import numpy as np
 import json
 
-PATH = '/logregmnist.joblib'
+PATH = 'logregmnist.joblib'
 
 lr_loaded = load(PATH)
 
