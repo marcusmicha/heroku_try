@@ -4,11 +4,12 @@ import sklearn
 import numpy as np
 import json
 
-PATH ='/logregmnist.joblib'
+PATH = '/logregmnist.joblib'
 
 lr_loaded = load(PATH)
 
 app = Flask(__name__)
+
 
 @app.route('/logreg/predict/')
 def predict():
@@ -17,6 +18,7 @@ def predict():
     digit = digit_raw.split(",")
     prediction = lr_loaded.predict(sklearn.preprocessing.normalize([np.array(digit)]))[0]
     return prediction
+
 
 @app.route('/predict/', methods=['POST'])
 def predict2():
